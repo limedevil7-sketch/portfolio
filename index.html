@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ===================== SEO ===================== -->
+  <title>[MY NAME] — Personal Brand & Digital Creator</title>
+  <meta name="description" content="[MY NAME] — [SHORT BIO]. Explore my world and find me across social media." />
+  <meta name="author" content="[MY NAME]" />
+  <meta name="theme-color" content="#08070c" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[MY NAME] — Personal Brand & Digital Creator" />
+  <meta property="og:description" content="[SHORT BIO]" />
+  <meta property="og:image" content="assets/og-cover.jpg" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[MY NAME] — Personal Brand & Digital Creator" />
+  <meta name="twitter:description" content="[SHORT BIO]" />
+  <meta name="twitter:image" content="assets/og-cover.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>" />
+
+  <!-- ===================== Fonts ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <span class="loader__name" data-loader-name>[MY NAME]</span>
+      <span class="loader__bar"><span class="loader__bar-fill"></span></span>
+    </div>
+  </div>
+
+  <!-- ===================== AMBIENT BACKGROUND ===================== -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-scene__aurora bg-scene__aurora--one"></div>
+    <div class="bg-scene__aurora bg-scene__aurora--two"></div>
+    <div class="bg-scene__grid"></div>
+    <div class="bg-scene__particles" data-particles></div>
+  </div>
+
+  <!-- Desktop-only ambient cursor glow -->
+  <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a href="#home" class="nav__brand" data-brand>[MY NAME]</a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#website" class="nav__link">My Website</a>
+        <a href="#socials" class="nav__link">Socials</a>
+      </nav>
+
+      <a href="#socials" class="nav__cta">Say Hi</a>
+
+      <button class="nav__burger" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu>
+      <a href="#home" class="mobile-menu__link">Home</a>
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#website" class="mobile-menu__link">My Website</a>
+      <a href="#socials" class="mobile-menu__link">Socials</a>
+      <a href="#socials" class="mobile-menu__cta">Say Hi</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__dot"></span> Personal Brand / Digital Creator</p>
+
+          <h1 class="hero__name" data-hero-name>[MY NAME]</h1>
+
+          <p class="hero__tagline">Welcome to my world.</p>
+
+          <p class="hero__bio" data-hero-bio>[SHORT BIO]</p>
+
+          <div class="hero__actions">
+            <a href="#about" class="btn btn--primary">
+              <span>About Me</span>
+            </a>
+            <a href="#socials" class="btn btn--ghost">
+              <span>My Socials</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="id-card" data-tilt>
+            <div class="id-card__glow"></div>
+            <div class="id-card__scan"></div>
+            <div class="id-card__top">
+              <span class="id-card__label">ACCESS · ALL AREAS</span>
+              <span class="id-card__status"><i></i> Online</span>
+            </div>
+
+            <div class="id-card__photo-wrap">
+              <img class="id-card__photo" data-profile-img src="assets/profile.jpg" alt="[MY NAME] profile photo" />
+            </div>
+
+            <div class="id-card__bottom">
+              <span class="id-card__name" data-hero-name-2>[MY NAME]</span>
+              <span class="id-card__role" data-hero-role>Digital Creator</span>
+            </div>
+
+            <div class="id-card__corner id-card__corner--tl"></div>
+            <div class="id-card__corner id-card__corner--br"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about" id="about">
+      <div class="section-inner">
+
+        <p class="eyebrow eyebrow--center" data-reveal><span class="eyebrow__dot"></span> Get to know me</p>
+        <h2 class="section-title" data-reveal>About Me</h2>
+
+        <div class="about__grid">
+
+          <article class="about__story glass-panel" data-reveal>
+            <h3 class="about__story-title">The short version</h3>
+            <p class="about__story-text" data-about-text>
+              [MY BIO — write a longer paragraph here about who you are, what you do, and what drives you. This text is fully editable from the CONFIG object in js/main.js.]
+            </p>
+          </article>
+
+          <aside class="about__card glass-panel" data-reveal>
+            <div class="about__card-header">
+              <img class="about__avatar" data-profile-img-2 src="assets/profile.jpg" alt="[MY NAME] photo" />
+              <div class="about__card-header-text">
+                <span class="about__card-dot"></span>
+                <span>PROFILE.DAT</span>
+              </div>
+            </div>
+            <dl class="about__facts">
+              <div class="about__fact">
+                <dt>Name</dt>
+                <dd data-about-name>[MY NAME]</dd>
+              </div>
+              <div class="about__fact">
+                <dt>Role</dt>
+                <dd data-about-role>Digital Creator</dd>
+              </div>
+              <div class="about__fact">
+                <dt>Status</dt>
+                <dd>Available to chat</dd>
+              </div>
+            </dl>
+          </aside>
+
+        </div>
+
+        <div class="interests" data-reveal>
+          <h3 class="interests__title">Things I love</h3>
+          <ul class="interests__list" data-interests-list>
+            <!-- Populated from CONFIG.interests via JS -->
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== MY WEBSITE / PROJECTS ===================== -->
+    <section class="projects" id="website">
+      <div class="section-inner">
+
+        <p class="eyebrow eyebrow--center" data-reveal><span class="eyebrow__dot"></span> Take a look</p>
+        <h2 class="section-title" data-reveal>My Website</h2>
+        <p class="section-subtitle" data-reveal>A closer look at what I've built.</p>
+
+        <div class="projects__grid" data-website-card>
+          <!-- Website card is injected by js/main.js from CONFIG.website -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== SOCIALS ===================== -->
+    <section class="socials" id="socials">
+      <div class="section-inner">
+
+        <p class="eyebrow eyebrow--center" data-reveal><span class="eyebrow__dot"></span> Let's connect</p>
+        <h2 class="section-title" data-reveal>Find Me Online</h2>
+        <p class="section-subtitle" data-reveal>Pick a platform below — I'm always around.</p>
+
+        <div class="socials__grid" data-socials-grid>
+          <!-- Social cards are injected by js/main.js from the CONFIG object -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="section-inner footer__inner">
+      <span class="footer__name" data-footer-name>[MY NAME]</span>
+      <p class="footer__thanks">Thanks for stopping by ❤️</p>
+
+      <div class="footer__socials" data-footer-socials>
+        <!-- Icons injected by JS -->
+      </div>
+
+      <p class="footer__copy">© <span data-year></span> <span data-footer-name-2>[MY NAME]</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BACK TO TOP ===================== -->
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
