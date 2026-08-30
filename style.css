@@ -1617,3 +1617,26 @@ button {
     grid-template-columns: 1fr;
   }
 }
+/* =====================================================================
+   FOOTER SOCIAL ICONS — SIZE FIX
+   ================================================================     */
+.footer__socials a, 
+.footer__socials img, 
+.footer__socials svg {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
