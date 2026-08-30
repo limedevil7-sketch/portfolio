@@ -1672,3 +1672,107 @@ button {
   height: 46px;
   background: var(--cyan);
 }
+
+/* =====================================================================
+   CERTIFICATES SECTION STYLES
+   ================================================================     */
+.certificates-section {
+  padding: 40px 0 110px;
+  position: relative;
+}
+
+.certificates-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.cert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    180deg,
+    var(--glass-strong),
+    var(--glass)
+  );
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    transform var(--dur-mid) var(--ease),
+    border-color var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease;
+}
+
+.cert-card.is-visible,
+.cert-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.008);
+  border-color: var(--violet);
+  box-shadow: 
+    0 30px 70px -24px rgba(0, 0, 0, 0.65),
+    var(--glow-violet);
+}
+
+.cert-image-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--surface-2);
+}
+
+.cert-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.cert-card:hover .cert-image-wrapper img {
+  transform: scale(1.06);
+}
+
+.cert-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.cert-content h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-1);
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--cyan);
+  letter-spacing: 0.04em;
+}
+
+.cert-content p {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin-top: 2px;
+}
