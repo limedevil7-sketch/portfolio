@@ -20,6 +20,53 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- FIX FOR SOCIAL ICONS SIZE & ALIGNMENT -->
+  <style>
+    .socials__grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      min-width: 140px;
+      position: relative;
+      z-index: 10;
+    }
+    .social-card:hover {
+      transform: translateY(-5px);
+      border-color: #00ff9f;
+      box-shadow: 0 0 20px rgba(0, 255, 159, 0.2);
+    }
+    .social-card img {
+      width: 50px !important;
+      height: 50px !important;
+      max-width: 50px !important;
+      max-height: 50px !important;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
+    }
+    .social-card span {
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
 
@@ -411,9 +458,20 @@
         <p class="section-subtitle" data-reveal>
           Choose a channel. I'm always online.
         </p>
-        <div class="socials__grid" data-socials-grid>
-          <!-- injected by main.js -->
+        
+        <!-- DIRECT SOCIAL LINKS WITH PROPER SIZING -->
+        <div class="socials__grid">
+          <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-card">
+            <img src="assets/instagram.png" alt="Instagram" />
+            <span>Instagram</span>
+          </a>
+          
+          <a href="https://snapchat.com/add/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-card">
+            <img src="assets/snapchat.png" alt="Snapchat" />
+            <span>Snapchat</span>
+          </a>
         </div>
+
       </div>
     </section>
   </main>
