@@ -451,8 +451,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   mask-image: radial-gradient(ellipse 75% 50% at 50% 15%, black 25%, transparent 75%);
 }
 
-/* No matrix canvas styles needed anymore */
-
 .bg-scene__particles {
   position: absolute;
   inset: 0;
@@ -1302,4 +1300,101 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @keyframes loadBar {
   0% { width: 0%; }
   100% { width: 100%; }
+}
+
+/* ---------------------------------------------------------------------
+   12. SOCIAL CARDS (Fix & Restyle)
+   --------------------------------------------------------------------- */
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--glass-strong);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--dur-fast) var(--ease);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card:hover {
+  border-color: rgba(0, 255, 159, 0.3);
+  background: rgba(0, 255, 159, 0.04);
+  transform: translateY(-2px);
+}
+
+.social-card__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-card__icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.social-card__icon img,
+.social-card__icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.social-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.social-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-1);
+}
+
+.social-card__handle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-3);
+}
+
+.social-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  margin-top: 4px;
+}
+
+.social-card__arrow {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  transition: all var(--dur-fast) ease;
+}
+
+.social-card:hover .social-card__arrow {
+  color: var(--matrix);
+  border-color: var(--border);
+  background: rgba(0, 255, 159, 0.08);
+  transform: translateX(3px);
 }
