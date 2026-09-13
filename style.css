@@ -352,7 +352,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 /* ---------------------------------------------------------------------
-   6. GLITCH (subtle)
+   6. GLITCH
    --------------------------------------------------------------------- */
 .glitch {
   position: relative;
@@ -397,7 +397,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 /* ---------------------------------------------------------------------
-   7. BACKGROUND (Clean & Professional)
+   7. BACKGROUND
    --------------------------------------------------------------------- */
 .bg-scene {
   position: fixed;
@@ -900,7 +900,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 /* ---------------------------------------------------------------------
-   10. ABOUT + REST OF SECTIONS
+   10. ABOUT + SECTIONS
    --------------------------------------------------------------------- */
 .about { padding: 110px 0 90px; }
 
@@ -1016,12 +1016,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 .projects { padding: 40px 0 90px; }
-.projects__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .certificates-section { padding: 40px 0 90px; }
 
@@ -1146,20 +1140,91 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   transform: translateY(-2px);
 }
 
-.socials { padding: 40px 0 110px; }
+/* ---------------------------------------------------------------------
+   11. SOCIAL CARDS (Vertical Grid Style)
+   --------------------------------------------------------------------- */
+.socials {
+  padding: 40px 0 110px;
+}
 
 .socials__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-@media (min-width: 700px) {
-  .socials__grid { grid-template-columns: 1fr 1fr; }
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: rgba(15, 20, 28, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  text-decoration: none;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 159, 0.35);
+  background: rgba(20, 28, 38, 0.85);
+}
+
+.social-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.social-card__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* الضبط النهائي لحجم وإبعاد الأيقونات لمنع الشذوذ */
+.social-card img,
+.social-card svg,
+.social-card__icon img,
+.social-card__icon svg {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.social-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-1);
+}
+
+.social-card__handle,
+.social-card__desc,
+.social-card__arrow {
+  display: none; /* إخفاء العناصر الزائدة لتناسب كروت الشاشة المرفقة */
 }
 
 /* ---------------------------------------------------------------------
-   11. FOOTER + LOADER + BACK TO TOP
+   12. FOOTER + LOADER + BACK TO TOP
    --------------------------------------------------------------------- */
 .footer {
   padding: 44px 0 36px;
@@ -1300,101 +1365,4 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @keyframes loadBar {
   0% { width: 0%; }
   100% { width: 100%; }
-}
-
-/* ---------------------------------------------------------------------
-   12. SOCIAL CARDS (Fix & Restyle)
-   --------------------------------------------------------------------- */
-.social-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  background: var(--glass-strong);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: all var(--dur-fast) var(--ease);
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.social-card:hover {
-  border-color: rgba(0, 255, 159, 0.3);
-  background: rgba(0, 255, 159, 0.04);
-  transform: translateY(-2px);
-}
-
-.social-card__content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.social-card__icon {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-
-.social-card__icon img,
-.social-card__icon svg {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-}
-
-.social-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.social-card__title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--text-1);
-}
-
-.social-card__handle {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-3);
-}
-
-.social-card__desc {
-  font-size: 0.85rem;
-  color: var(--text-2);
-  margin-top: 4px;
-}
-
-.social-card__arrow {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-2);
-  transition: all var(--dur-fast) ease;
-}
-
-.social-card:hover .social-card__arrow {
-  color: var(--matrix);
-  border-color: var(--border);
-  background: rgba(0, 255, 159, 0.08);
-  transform: translateX(3px);
 }
