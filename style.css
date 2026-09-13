@@ -1237,8 +1237,6 @@ button {
   }
 }
 
-/* Reuse .id-card styles for certificates – already styled above */
-
 /* ---------------------------------------------------------------------
    9. LIME BOT
    --------------------------------------------------------------------- */
@@ -1660,7 +1658,7 @@ button {
 }
 
 /* ---------------------------------------------------------------------
-   13. LOADER
+   13. LOADER (Fixed - supports both is-done and is-hidden)
    --------------------------------------------------------------------- */
 .loader {
   position: fixed;
@@ -1673,7 +1671,8 @@ button {
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.loader.is-done {
+.loader.is-done,
+.loader.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
