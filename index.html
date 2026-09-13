@@ -3,52 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <!-- SEO -->
   <title>Saif El-Din — Cyber Security</title>
-  <meta
-    name="description"
-    content="Saif El-Din — Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology."
-  />
+  <meta name="description" content="Saif El-Din — Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology." />
   <meta name="author" content="Saif El-Din" />
   <meta name="theme-color" content="#050608" />
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Saif El-Din — Cyber Security" />
-  <meta
-    property="og:description"
-    content="Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology."
-  />
+  <meta property="og:description" content="Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology." />
   <meta property="og:image" content="assets/og-cover.jpg" />
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Saif El-Din — Cyber Security" />
-  <meta
-    name="twitter:description"
-    content="Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology."
-  />
+  <meta name="twitter:description" content="Cyber Security enthusiast focused on cybersecurity, ethical hacking, digital security and technology." />
   <meta name="twitter:image" content="assets/og-cover.jpg" />
-  <!-- Favicon -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E"
-  />
-  <!-- Fonts -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- LOADER -->
   <div id="loader" class="loader" aria-hidden="true">
     <div class="loader__mark">
-      <span class="loader__name" data-loader-name>SAIF EL-DIN</span>
-      <span class="loader__bar">
-        <span class="loader__bar-fill"></span>
-      </span>
+      <span class="loader__name">SAIF EL-DIN</span>
+      <span class="loader__bar"><span class="loader__bar-fill"></span></span>
+      <span class="loader__status">INITIALIZING SECURE SESSION...</span>
+    </div>
+  </div>
+
+  <!-- SYSTEM STATUS BAR -->
+  <div class="system-bar" aria-hidden="true">
+    <div class="system-bar__inner">
+      <span class="system-bar__item"><i class="system-bar__dot"></i> SYSTEM ONLINE</span>
+      <span class="system-bar__item">CLEARANCE: LEVEL 5</span>
+      <span class="system-bar__item">ENCRYPTION: AES-256</span>
+      <span class="system-bar__item system-bar__item--right">STATUS: SECURE</span>
     </div>
   </div>
 
@@ -57,6 +47,7 @@
     <div class="bg-scene__aurora bg-scene__aurora--one"></div>
     <div class="bg-scene__aurora bg-scene__aurora--two"></div>
     <div class="bg-scene__grid"></div>
+    <canvas class="bg-scene__matrix" id="matrixCanvas"></canvas>
     <div class="bg-scene__particles" data-particles></div>
   </div>
 
@@ -65,9 +56,7 @@
   <!-- NAVBAR -->
   <header class="nav" data-nav>
     <div class="nav__inner">
-      <a href="#home" class="nav__brand" data-brand>
-        SAIF EL-DIN
-      </a>
+      <a href="#home" class="nav__brand">SAIF EL-DIN</a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#home" class="nav__link">Home</a>
         <a href="#about" class="nav__link">About</a>
@@ -77,19 +66,10 @@
         <a href="#socials" class="nav__link">Socials</a>
       </nav>
       <a href="#socials" class="nav__cta">Say Hi</a>
-      <button
-        class="nav__burger"
-        data-burger
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="nav__burger" data-burger aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu" data-mobile-menu>
       <a href="#home" class="mobile-menu__link">Home</a>
       <a href="#about" class="mobile-menu__link">About</a>
@@ -107,40 +87,51 @@
       <div class="hero__inner">
         <div class="hero__copy" data-reveal>
           
-          <!-- Terminal Line -->
-          <div class="terminal-line">
-            <span class="terminal-line__prompt">root@saif:~$</span>
-            <span class="terminal-line__cmd">whoami</span>
-            <span class="terminal-line__cursor"></span>
+          <div class="terminal-window">
+            <div class="terminal-window__bar">
+              <span class="terminal-window__dot"></span>
+              <span class="terminal-window__dot"></span>
+              <span class="terminal-window__dot"></span>
+              <span class="terminal-window__title">secure_shell.exe</span>
+            </div>
+            <div class="terminal-window__body">
+              <div class="terminal-line">
+                <span class="terminal-line__prompt">root@saif:~$</span>
+                <span class="terminal-line__cmd">whoami</span>
+              </div>
+              <div class="terminal-line terminal-line--result">
+                <span class="terminal-line__result">→ Saif El-Din // Cyber Security Specialist</span>
+              </div>
+              <div class="terminal-line">
+                <span class="terminal-line__prompt">root@saif:~$</span>
+                <span class="terminal-line__cmd">status</span>
+                <span class="terminal-line__cursor"></span>
+              </div>
+            </div>
           </div>
 
           <p class="eyebrow">
             <span class="eyebrow__dot"></span>
-            Cyber Security / Technology
+            Cyber Security / Ethical Hacking
           </p>
 
-          <h1 class="hero__name" data-hero-name>
+          <h1 class="hero__name glitch" data-text="SAIF EL-DIN">
             SAIF EL-DIN
           </h1>
 
           <p class="hero__tagline">
-            Welcome to my digital world.
+            Access Granted. Welcome to my digital domain.
           </p>
 
-          <p class="hero__bio" data-hero-bio>
+          <p class="hero__bio">
             Cyber Security enthusiast passionate about ethical hacking,
-            digital security, networking and exploring how technology works.
-            I build, learn and experiment with technology while constantly
-            developing my skills in the world of cybersecurity.
+            penetration testing, digital security and networking.
+            I break systems to understand them — then make them stronger.
           </p>
 
           <div class="hero__actions">
-            <a href="#about" class="btn btn--primary">
-              <span>About Me</span>
-            </a>
-            <a href="#socials" class="btn btn--ghost">
-              <span>My Socials</span>
-            </a>
+            <a href="#about" class="btn btn--primary"><span>Explore Profile</span></a>
+            <a href="#socials" class="btn btn--ghost"><span>Establish Connection</span></a>
           </div>
         </div>
 
@@ -150,29 +141,16 @@
             <div class="id-card__glow"></div>
             <div class="id-card__scan"></div>
             <div class="id-card__top">
-              <span class="id-card__label">
-                SECURITY CLEARANCE
-              </span>
-              <span class="id-card__status">
-                <i></i>
-                Online
-              </span>
+              <span class="id-card__label">SECURITY CLEARANCE</span>
+              <span class="id-card__status"><i></i> ONLINE</span>
             </div>
             <div class="id-card__photo-wrap">
-              <img
-                class="id-card__photo"
-                data-profile-img
-                src="assets/profile.jpg"
-                alt="Saif El-Din profile photo"
-              />
+              <img class="id-card__photo" src="assets/profile.jpg" alt="Saif El-Din profile photo" />
             </div>
             <div class="id-card__bottom">
-              <span class="id-card__name" data-hero-name-2>
-                SAIF EL-DIN
-              </span>
-              <span class="id-card__role" data-hero-role>
-                CYBER SECURITY
-              </span>
+              <span class="id-card__name">SAIF EL-DIN</span>
+              <span class="id-card__role">CYBER SECURITY</span>
+              <span class="id-card__id">ID: #SX-7741-A</span>
             </div>
             <div class="id-card__corner id-card__corner--tl"></div>
             <div class="id-card__corner id-card__corner--br"></div>
@@ -180,11 +158,7 @@
         </div>
       </div>
 
-      <a
-        href="#about"
-        class="scroll-cue"
-        aria-label="Scroll to About section"
-      >
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
         <span></span>
       </a>
     </section>
@@ -192,19 +166,24 @@
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="section-inner">
-        <p class="eyebrow eyebrow--center" data-reveal>
-          <span class="eyebrow__dot"></span>
-          Get to know me
-        </p>
-        <h2 class="section-title" data-reveal>
-          About Me
-        </h2>
+        <div class="section-header" data-reveal>
+          <div class="section-header__line"></div>
+          <p class="eyebrow eyebrow--center">
+            <span class="eyebrow__dot"></span>
+            System Profile
+          </p>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-header__line"></div>
+        </div>
+
         <div class="about__grid">
           <article class="about__story glass-panel" data-reveal>
-            <h3 class="about__story-title">
-              The short version
-            </h3>
-            <p class="about__story-text" data-about-text>
+            <div class="panel-header">
+              <span class="panel-header__title">BIO.LOG</span>
+              <span class="panel-header__status">READ ONLY</span>
+            </div>
+            <h3 class="about__story-title">The short version</h3>
+            <p class="about__story-text">
               I'm Saif El-Din, a Cyber Security enthusiast with a strong
               interest in ethical hacking, penetration testing, networking,
               digital privacy and information security.
@@ -213,57 +192,51 @@
               technology more secure.
               My goal is to continuously improve my technical skills,
               gain real-world experience and build a strong career in
-              cybersecurity while staying curious and learning something
-              new every day.
+              cybersecurity.
             </p>
           </article>
+
           <aside class="about__card glass-panel" data-reveal>
+            <div class="panel-header">
+              <span class="panel-header__title">PROFILE.DAT</span>
+              <span class="panel-header__status">ACTIVE</span>
+            </div>
             <div class="about__card-header">
-              <img
-                class="about__avatar"
-                data-profile-img-2
-                src="assets/profile.jpg"
-                alt="Saif El-Din photo"
-              />
+              <img class="about__avatar" src="assets/profile.jpg" alt="Saif El-Din" />
               <div class="about__card-header-text">
                 <span class="about__card-dot"></span>
-                <span>PROFILE.DAT</span>
+                <span>OPERATOR</span>
               </div>
             </div>
             <dl class="about__facts">
               <div class="about__fact">
                 <dt>Name</dt>
-                <dd data-about-name>
-                  Saif El-Din
-                </dd>
+                <dd>Saif El-Din</dd>
               </div>
               <div class="about__fact">
                 <dt>Role</dt>
-                <dd data-about-role>
-                  Cyber Security
-                </dd>
+                <dd>Cyber Security</dd>
               </div>
               <div class="about__fact">
                 <dt>Status</dt>
-                <dd>
-                  Available to chat
-                </dd>
+                <dd>Available</dd>
+              </div>
+              <div class="about__fact">
+                <dt>Focus</dt>
+                <dd>Ethical Hacking</dd>
               </div>
             </dl>
           </aside>
         </div>
 
-        <!-- INTERESTS -->
         <div class="interests" data-reveal>
-          <h3 class="interests__title">
-            Things I love
-          </h3>
-          <ul class="interests__list" data-interests-list>
+          <h3 class="interests__title">// Core Interests</h3>
+          <ul class="interests__list">
             <li>Cyber Security</li>
             <li>Ethical Hacking</li>
+            <li>Penetration Testing</li>
             <li>Networking</li>
-            <li>Technology</li>
-            <li>Learning</li>
+            <li>Digital Privacy</li>
           </ul>
         </div>
       </div>
@@ -272,42 +245,47 @@
     <!-- MY WEBSITE -->
     <section class="projects" id="website">
       <div class="section-inner">
-        <p class="eyebrow eyebrow--center" data-reveal>
-          <span class="eyebrow__dot"></span>
-          Take a look
-        </p>
-        <h2 class="section-title" data-reveal>
-          My Website
-        </h2>
+        <div class="section-header" data-reveal>
+          <div class="section-header__line"></div>
+          <p class="eyebrow eyebrow--center">
+            <span class="eyebrow__dot"></span>
+            Deployed Assets
+          </p>
+          <h2 class="section-title">My Website</h2>
+          <div class="section-header__line"></div>
+        </div>
         <p class="section-subtitle" data-reveal>
-          Explore my personal website and learn more about me.
+          Explore my personal website and digital presence.
         </p>
         <div class="projects__grid" data-website-card>
-          <!-- Website card injected by main.js -->
+          <!-- injected by main.js -->
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATES SECTION -->
+    <!-- CERTIFICATES -->
     <section class="certificates-section" id="certificates">
       <div class="section-inner">
-        <div data-reveal>
+        <div class="section-header" data-reveal>
+          <div class="section-header__line"></div>
           <p class="eyebrow eyebrow--center">
             <span class="eyebrow__dot"></span>
-            Credentials & Proving Ground
+            Credentials & Clearance
           </p>
-          <h2 class="section-title">Certificates & Credentials</h2>
-          <p class="section-subtitle">Documentation of professional academies and tech programs completed with honors.</p>
+          <h2 class="section-title">Certificates</h2>
+          <div class="section-header__line"></div>
         </div>
+        <p class="section-subtitle" data-reveal>
+          Verified credentials from professional academies and programs.
+        </p>
+
         <div class="certificates-grid">
-          
-          <!-- Certificate 1: IAIS -->
           <div class="id-card" data-reveal>
             <div class="id-card__glow"></div>
             <div class="id-card__scan"></div>
             <div class="id-card__top">
               <span class="id-card__label">IAIS · CERT</span>
-              <span class="id-card__status"><i></i>Verified</span>
+              <span class="id-card__status"><i></i> VERIFIED</span>
             </div>
             <div class="id-card__photo-wrap" style="aspect-ratio: 16/11;">
               <img class="id-card__photo" src="assets/cert-iais.jpg" alt="IAIS Certificate" loading="lazy" style="object-fit: cover;" />
@@ -320,16 +298,15 @@
             <div class="id-card__corner id-card__corner--br"></div>
           </div>
 
-          <!-- Certificate 2: Edraak -->
           <div class="id-card" data-reveal>
             <div class="id-card__glow"></div>
             <div class="id-card__scan"></div>
             <div class="id-card__top">
               <span class="id-card__label">EDRAAK · CERT</span>
-              <span class="id-card__status"><i></i>Verified</span>
+              <span class="id-card__status"><i></i> VERIFIED</span>
             </div>
             <div class="id-card__photo-wrap" style="aspect-ratio: 16/11;">
-              <img class="id-card__photo" src="assets/cert-coursera.jpg" alt="Coursera Certificate" loading="lazy" style="object-fit: cover;" />
+              <img class="id-card__photo" src="assets/cert-coursera.jpg" alt="Certificate" loading="lazy" style="object-fit: cover;" />
             </div>
             <div class="id-card__bottom">
               <span class="id-card__name" style="font-size: 0.9rem;">Cyber Security Basics</span>
@@ -339,13 +316,12 @@
             <div class="id-card__corner id-card__corner--br"></div>
           </div>
 
-          <!-- Certificate 3: GICE -->
           <div class="id-card" data-reveal>
             <div class="id-card__glow"></div>
             <div class="id-card__scan"></div>
             <div class="id-card__top">
               <span class="id-card__label">GICE · CERT</span>
-              <span class="id-card__status"><i></i>Verified</span>
+              <span class="id-card__status"><i></i> VERIFIED</span>
             </div>
             <div class="id-card__photo-wrap" style="aspect-ratio: 16/11;">
               <img class="id-card__photo" src="assets/cert-gice.jpg" alt="GICE Certificate" loading="lazy" style="object-fit: cover;" />
@@ -358,16 +334,15 @@
             <div class="id-card__corner id-card__corner--br"></div>
           </div>
 
-          <!-- Certificate 4: Coursera -->
           <div class="id-card" data-reveal>
             <div class="id-card__glow"></div>
             <div class="id-card__scan"></div>
             <div class="id-card__top">
               <span class="id-card__label">COURSERA · CERT</span>
-              <span class="id-card__status"><i></i>Verified</span>
+              <span class="id-card__status"><i></i> VERIFIED</span>
             </div>
             <div class="id-card__photo-wrap" style="aspect-ratio: 16/11;">
-              <img class="id-card__photo" src="assets/cert-edraak.jpg" alt="Edraak Certificate" loading="lazy" style="object-fit: cover;" />
+              <img class="id-card__photo" src="assets/cert-edraak.jpg" alt="Certificate" loading="lazy" style="object-fit: cover;" />
             </div>
             <div class="id-card__bottom">
               <span class="id-card__name" style="font-size: 0.9rem;">Cyber Security Basics</span>
@@ -380,21 +355,26 @@
       </div>
     </section>
 
-    <!-- DISCORD BOT SECTION (Lime Bot) -->
+    <!-- LIME BOT -->
     <section class="lime-bot-section" id="lime-bot">
       <div class="section-inner">
-        <div data-reveal>
+        <div class="section-header" data-reveal>
+          <div class="section-header__line"></div>
           <p class="eyebrow eyebrow--center">
             <span class="eyebrow__dot"></span>
             Security Automation
           </p>
           <h2 class="section-title">Lime Bot</h2>
-          <p class="section-subtitle">Advanced Discord security, auto-moderation, and server protection bot.</p>
+          <div class="section-header__line"></div>
         </div>
+        <p class="section-subtitle" data-reveal>
+          Advanced Discord security, auto-moderation, and server protection.
+        </p>
+
         <div class="lime-bot-card" data-reveal>
           <div class="lime-bot__header">
             <div class="lime-bot__avatar">
-              <img src="assets/profile.jpg" alt="Lime Bot Avatar">
+              <img src="assets/profile.jpg" alt="Lime Bot">
             </div>
             <div class="lime-bot__info">
               <h3>Lime Bot <span class="lime-bot__status"></span></h3>
@@ -419,18 +399,20 @@
     <!-- SOCIALS -->
     <section class="socials" id="socials">
       <div class="section-inner">
-        <p class="eyebrow eyebrow--center" data-reveal>
-          <span class="eyebrow__dot"></span>
-          Let's connect
-        </p>
-        <h2 class="section-title" data-reveal>
-          Find Me Online
-        </h2>
+        <div class="section-header" data-reveal>
+          <div class="section-header__line"></div>
+          <p class="eyebrow eyebrow--center">
+            <span class="eyebrow__dot"></span>
+            Establish Connection
+          </p>
+          <h2 class="section-title">Find Me Online</h2>
+          <div class="section-header__line"></div>
+        </div>
         <p class="section-subtitle" data-reveal>
-          Pick a platform below — I'm always around.
+          Choose a channel. I'm always online.
         </p>
         <div class="socials__grid" data-socials-grid>
-          <!-- Social cards injected by main.js -->
+          <!-- injected by main.js -->
         </div>
       </div>
     </section>
@@ -439,44 +421,59 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="section-inner footer__inner">
-      <span class="footer__name" data-footer-name>
-        SAIF EL-DIN
-      </span>
-      <p class="footer__thanks">
-        Thanks for stopping by ❤️
-      </p>
-      <div class="footer__socials" data-footer-socials>
-        <!-- Icons injected by JS -->
-      </div>
+      <span class="footer__name">SAIF EL-DIN</span>
+      <p class="footer__thanks">Connection terminated. Stay secure.</p>
+      <div class="footer__socials" data-footer-socials></div>
       <p class="footer__copy">
-        © <span data-year></span>
-        <span data-footer-name-2>Saif El-Din</span>.
-        All rights reserved.
+        © <span data-year></span> Saif El-Din. All rights reserved.
       </p>
     </div>
   </footer>
 
   <!-- BACK TO TOP -->
-  <button
-    class="back-to-top"
-    data-back-to-top
-    aria-label="Back to top"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      width="20"
-      height="20"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 19V5" />
       <path d="M5 12l7-7 7 7" />
     </svg>
   </button>
 
   <script src="js/main.js"></script>
+  <script>
+    // Simple Matrix Rain
+    (function() {
+      const canvas = document.getElementById('matrixCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height, columns, drops;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        columns = Math.floor(width / 18);
+        drops = Array(columns).fill(1);
+      }
+
+      function draw() {
+        ctx.fillStyle = 'rgba(5, 6, 8, 0.05)';
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#00ff9f';
+        ctx.font = '14px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+          ctx.fillText(text, i * 18, drops[i] * 18);
+          if (drops[i] * 18 > height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      setInterval(draw, 50);
+    })();
+  </script>
 </body>
 </html>
